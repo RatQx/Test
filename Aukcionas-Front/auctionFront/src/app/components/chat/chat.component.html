@@ -1,0 +1,93 @@
+<div class="chat-container">
+  <div class="open-chats">
+    <h2>Chats</h2>
+    <button class="chat-button" (click)="startConversation()">
+      Start Conversation
+    </button>
+    <div class="chat-list">
+      <div
+        *ngFor="let chat of chats$ | async"
+        class="chat-item"
+        (click)="openChat(chat.id)"
+      >
+        {{
+          chat.reciverUserName !== username
+            ? chat.reciverUserName
+            : chat.createdUserName
+        }}
+        - {{ chat.createdAt | date : "medium" }}
+        <div class="chat-icons">
+          <button mat-icon-button (click)="deleteChat(chat.id)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showStartConversationDropdown" class="dropdown">
+      <mat-form-field>
+        <mat-label>Chat with user</mat-label>
+        <input
+          type="text"
+          matInput
+          [formControl]="usernameControl"
+          [matAutocomplete]="auto"
+        />
+
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          (optionSelected)="onUserSelected($event)"
+        >
+          <mat-option *ngFor="let username of allUsernames" [value]="username">
+            {{ username }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!usernameControl.value"
+        (click)="startChatWithUser()"
+      >
+        Start Chat
+      </button>
+      <button mat-icon-button (click)="cancelStartConversation()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="chat-window">
+    <div class="messages">
+      <div *ngFor="let message of messages" class="message">
+        <div class="message-content">
+          <div
+            *ngIf="message.senderUsername === this.username; else otherUser"
+            class="own-message"
+          >
+            <div>{{ message.senderUsername }}</div>
+            <div class="content">{{ message.content }}</div>
+            <div class="sent-at">{{ message.sentAt | date : "shortTime" }}</div>
+            <mat-icon class="delete-icon" (click)="deleteMessage(message.id)">
+              delete_forever
+            </mat-icon>
+          </div>
+          <ng-template #otherUser>
+            <div class="other-message">
+              <div>{{ message.senderUsername }}</div>
+              <div class="content">{{ message.content }}</div>
+              <div class="sent-at">
+                {{ message.sentAt | date : "shortTime" }}
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="new-message">
+      <textarea
+        [(ngModel)]="newMessageText"
+        placeholder="Type a message..."
+      ></textarea>
+      <button class="send-button" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

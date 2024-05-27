@@ -1,0 +1,67 @@
+<ul mat-dialog-title class="grid">
+  <div
+    class="product-container"
+    *ngFor="
+      let product of auctions
+        | slice : currentPage * pageSize : (currentPage + 1) * pageSize
+    "
+  >
+    <div class="product">
+      <div *ngIf="isImageLoading">
+        <img
+          src="../../../assets/images/default-image.png"
+          alt="Default Image"
+        />
+      </div>
+      <div *ngIf="!isImageLoading">
+        <img
+          *ngIf="imageToShow.get(product.id)"
+          [src]="imageToShow.get(product.id)"
+          alt="Product Image"
+        />
+      </div>
+      <div class="attributes">
+        <p style="text-align: center" class="attribute">
+          {{ product.name }}
+        </p>
+        <p class="attribute">
+          <mat-icon>location_on</mat-icon>
+          Country, city: {{ product.country }}, {{ product.city }}
+        </p>
+        <p class="attribute">
+          <mat-icon>thumb_up</mat-icon>
+          Auction likes {{ product.auction_likes ?? "0" }}
+        </p>
+        <p class="attribute">
+          <mat-icon>monetization_on</mat-icon>
+          Current bid:
+          {{
+            product.bidding_amount_history[
+              product.bidding_amount_history.length - 1
+            ]
+          }}
+          €
+        </p>
+        <p class="attribute">
+          <mat-icon>schedule</mat-icon>
+          Auction ends:
+          {{ product.auction_end_time | date : "yyyy-MM-dd hh:mm" }}
+        </p>
+      </div>
+      <button
+        mat-button
+        (click)="openDetailsModal(product)"
+        class="show-more-btn"
+      >
+        Show More
+      </button>
+    </div>
+  </div>
+</ul>
+
+<mat-paginator
+  [pageSizeOptions]="pageSizeOptions"
+  [pageSize]="pageSize"
+  [length]="totalAuctions"
+  (page)="onPageChange($event)"
+></mat-paginator>

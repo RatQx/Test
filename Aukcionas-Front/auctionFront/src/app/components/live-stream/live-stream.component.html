@@ -1,0 +1,25 @@
+<button
+  mat-raised-button
+  color="warn"
+  (click)="startLivestream()"
+  *ngIf="!livestreamActive && this.userid == this.auction?.username"
+>
+  Start Livestream
+</button>
+<button
+  mat-raised-button
+  color="warn"
+  (click)="stopLivestream()"
+  *ngIf="livestreamActive && this.userid == this.auction?.username"
+>
+  Stop Livestream
+</button>
+<iframe
+  *ngIf="livestreamActive"
+  width="640"
+  height="360"
+  frameborder="0"
+  allow="microphone; camera; fullscreen"
+  [src]="livestreamSrc"
+>
+</iframe>

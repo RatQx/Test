@@ -1,0 +1,139 @@
+<router-outlet>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Online auctions</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home">
+              <mat-icon>home</mat-icon> Main page
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="auction">
+              <mat-icon>list</mat-icon> Auctions list
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="create-auction"
+            >
+              <mat-icon>add_circle</mat-icon> Create auction
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="information">
+              <mat-icon>info</mat-icon> Information
+            </a>
+          </li>
+          <li class="nav-item flare dropdown">
+            <a
+              class="nav-link mx-2 dropdown-toggle"
+              href="#"
+              role="button"
+              id="navbarDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <mat-icon>account_circle</mat-icon>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="nav-item" *ngIf="isLoged && username">
+                <p style="padding-left: 10px; padding-top: 5px;">
+                  User: <b>{{ username }}</b>
+                </p>
+              </li>
+              <li class="nav-item" *ngIf="isLoged">
+                <a class="nav-link" href="profile"
+                  ><mat-icon>account_circle</mat-icon> User Profile</a
+                >
+              </li>
+              <li class="nav-item" *ngIf="isLoged">
+                <a class="nav-link" href="chat"
+                  ><mat-icon>chat</mat-icon> Chats</a
+                >
+              </li>
+              <li class="nav-item" *ngIf="!isLoged">
+                <a class="nav-link active" aria-current="page" href="login">
+                  <mat-icon>login</mat-icon> Login
+                </a>
+              </li>
+              <li class="nav-item" *ngIf="!isLoged">
+                <a class="nav-link active" aria-current="page" href="register">
+                  <mat-icon>person_add</mat-icon> Register
+                </a>
+              </li>
+              <li class="nav-item flare" *ngIf="isLoged">
+                <a class="nav-link mx-2" href="" (click)="logOut()">
+                  <mat-icon>logout</mat-icon> Logout
+                  <span class="ms-2">&#x2192;</span>
+                </a>
+              </li>
+              <li class="nav-item" *ngIf="isAdmin">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  routerLink="admin"
+                >
+                  <mat-icon>admin_panel_settings</mat-icon> Admin Page
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex auction-search" role="search">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Search for auctions..."
+            aria-label="Search"
+            (keyup)="onSearch($event)"
+          />
+        </form>
+      </div>
+    </div>
+  </nav>
+</router-outlet>
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>
+          Online auction website, where you can sell and buy items with no
+          additional fees!
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <ul class="list-unstyled">
+          <li>
+            Email:
+            <a href="mailto:auckionaiinfo&#64;gmail.com"
+              >auckionaiinfo&#64;gmail.com</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>More information</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="information">Here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer> -->

@@ -1,0 +1,78 @@
+<div class="modal-body">
+  <h2 mat-dialog-title>
+    <mat-icon>info</mat-icon> {{ data.product.name }} Details
+  </h2>
+  <div class="auction-details">
+    <div class="auction-card">
+      <div class="auction-card-content">
+        <div class="auction-card-item">
+          <span class="auction-label">Time left:</span>
+          <span class="auction-value">{{ timeDiff }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Current bid:</span>
+          <span class="auction-value"
+            >{{
+              data.product.bidding_amount_history[
+                data.product.bidding_amount_history.length - 1
+              ]
+            }}
+            €</span
+          >
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Auction description:</span>
+          <span class="auction-value">{{ data.product.description }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Country:</span>
+          <span class="auction-value">{{ data.product.country }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">City:</span>
+          <span class="auction-value">{{ data.product.city }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Item mass(kg):</span>
+          <span class="auction-value">{{ data.product.item_mass }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Item biuld year:</span>
+          <span class="auction-value">{{ data.product.item_build_year }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Condition:</span>
+          <span class="auction-value">{{ data.product.condition }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Material:</span>
+          <span class="auction-value">{{ data.product.material }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Auction start date:</span>
+          <span class="auction-value">{{
+            data.product.auction_start_time | date : "yyyy-MM-dd hh:mm"
+          }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Auction end date:</span>
+          <span class="auction-value">{{
+            data.product.auction_end_time | date : "yyyy-MM-dd hh:mm"
+          }}</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Buy now price:</span>
+          <span class="auction-value">{{ data.product.buy_now_price }} €</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Category:</span>
+          <span class="auction-value">{{ data.product.category }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button (click)="bidNow()">Enter auction</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,314 @@
+<div class="container mt-5">
+  <h2>User Information</h2>
+
+  <div *ngIf="!showEditForm">
+    <div class="mb-3">
+      <label for="collectData" class="form-label"
+        >Collect user data for personalized auction recomendations</label
+      >
+      <div class="form-control">{{ userInfo.collectData ? "Yes" : "No" }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="userName" class="form-label">Username</label>
+      <div class="form-control">{{ userInfo.userName }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <div class="form-control">{{ userInfo.email }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <div class="form-control">{{ userInfo.name }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="surname" class="form-label">Surname</label>
+      <div class="form-control">{{ userInfo.surname }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone number</label>
+      <div class="form-control">{{ userInfo.phoneNumber }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Payout Method</label>
+      <div class="form-control">
+        {{ userInfo.paypal ? "PayPal" : userInfo.bank ? "Bank" : "" }}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-primary" (click)="toggleEditForm()">
+        Edit Information
+      </button>
+    </div>
+
+    <div class="mb-3">
+      <button mat-raised-button color="warn" (click)="confirmDeleteUser()">
+        Delete Your User (Permanently)
+      </button>
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-primary mt-3" (click)="toggleAuctionsWonTable()">
+        {{ showAuctionsWonTable ? "Hide Auctions Won" : "Show Auctions Won" }}
+      </button>
+
+      <table class="table mt-3" *ngIf="showAuctionsWonTable">
+        <thead>
+          <tr>
+            <th>Auction Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let auction of userInfo.auctions_Won">
+            <td>
+              <a [routerLink]="['/auction-bid', auction]">{{ auction }}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-primary mt-3" (click)="toggleLikedAuctionsTable()">
+        {{
+          showLikedAuctionsTable ? "Hide Liked Auctions" : "Show Liked Auctions"
+        }}
+      </button>
+
+      <table
+        class="table mt-3"
+        *ngIf="showLikedAuctionsTable"
+        style="margin-bottom: 50px"
+      >
+        <thead>
+          <tr>
+            <th>Auction</th>
+            <th>Remove from liked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let auction of userInfo.liked_Auctions">
+            <td>
+              <a [routerLink]="['/auction-bid', auction]">{{ auction }}</a>
+            </td>
+            <td>
+              <button (click)="unlikeAuction(auction)">Unlke</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary mt-3" (click)="togglePaymentLinksTable()" style="margin-bottom: 50px;">
+        {{ showPaymentLinksTable ? "Hide Payment Links" : "Show Payment Links" }}
+      </button>
+  
+      <table class="table mt-3" *ngIf="showPaymentLinksTable" style="margin-bottom: 50px;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Payment Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paymentLink of paymentLinks">
+            <td>{{ paymentLink.id }}</td>
+            <a href="{{ paymentLink.payment_Link }}" target="_blank">Press Here</a>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <form *ngIf="showEditForm" (ngSubmit)="submitForm()" #userForm="ngForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        [(ngModel)]="userInfo.name"
+        minlength="3"
+        maxlength="50"
+      />
+      <div
+        *ngIf="
+          userForm.controls['name'].dirty || userForm.controls['name'].touched
+        "
+      >
+        <div *ngIf="userForm.controls['name'].hasError('minlength')">
+          Name must be at least 3 characters.
+        </div>
+        <div *ngIf="userForm.controls['name'].hasError('maxlength')">
+          Name cannot exceed 50 characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="surname" class="form-label">Surname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="surname"
+        name="surname"
+        [(ngModel)]="userInfo.surname"
+        minlength="3"
+        maxlength="50"
+      />
+      <div
+        *ngIf="
+          userForm.controls['surname'].dirty ||
+          userForm.controls['surname'].touched
+        "
+      >
+        <div *ngIf="userForm.controls['surname'].hasError('minlength')">
+          Surname must be at least 3 characters.
+        </div>
+        <div *ngIf="userForm.controls['surname'].hasError('maxlength')">
+          Surname cannot exceed 50 characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone number</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phoneNumber"
+        name="phoneNumber"
+        [(ngModel)]="userInfo.phoneNumber"
+        pattern="^(\+\d{9}|\d{9}|)$"
+      />
+      <div
+        *ngIf="
+          userForm.controls['phoneNumber'].dirty ||
+          userForm.controls['phoneNumber'].touched
+        "
+      >
+        <div *ngIf="userForm.controls['phoneNumber'].hasError('pattern')">
+          Invalid phone number format.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Collect Data</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="collectDataCheckbox"
+          name="collectData"
+          [(ngModel)]="userInfo.collectData"
+        />
+        <label class="form-check-label" for="collectDataCheckbox"
+          >Collect Data</label
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Payout Method</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="paypalOption"
+          name="paymentMethod"
+          value="paypal"
+          [(ngModel)]="userInfo.paypal"
+          (change)="onPaymentMethodChange('paypal')"
+        />
+        <label class="form-check-label" for="paypalOption">PayPal</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="bankOption"
+          name="paymentMethod"
+          value="bank"
+          [(ngModel)]="userInfo.bank"
+          (change)="onPaymentMethodChange('bank')"
+        />
+        <label class="form-check-label" for="bankOption">Bank</label>
+      </div>
+    </div>
+
+    <div *ngIf="userInfo.paypal">
+      <div class="mb-3">
+        <label for="paypal_Email" class="form-label">PayPal Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="paypal_Email"
+          name="paypal_Email"
+          [(ngModel)]="userInfo.paypal_Email"
+        />
+      </div>
+    </div>
+    >
+    <div *ngIf="userInfo.bank">
+      <div class="mb-3">
+        <label for="account_Holder_Name" class="form-label"
+          >Account holder full name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="account_Holder_Name"
+          name="account_Holder_Name"
+          [(ngModel)]="userInfo.account_Holder_Name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="account_Number" class="form-label"
+          >Bank account number (IBAN)</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="account_Number"
+          name="account_Number"
+          [(ngModel)]="userInfo.account_Number"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="bank_Name" class="form-label">Bank name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bank_Name"
+          name="bank_Name"
+          [(ngModel)]="userInfo.bank_Name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="bic_Swift_Code" class="form-label">BIC/SWIFT code</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bic_Swift_Code"
+          name="bic_Swift_Code"
+          [(ngModel)]="userInfo.bic_Swift_Code"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+      Save Changes
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="toggleEditForm()">
+      Cancel
+    </button>
+  </form>
+</div>

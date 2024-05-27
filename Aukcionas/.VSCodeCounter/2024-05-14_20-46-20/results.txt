@@ -1,0 +1,178 @@
+Date : 2024-05-14 20:46:20
+Directory : c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests
+Total : 139 files,  66069 codes, 40 comments, 906 blanks, all 67015 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| HTML         |         84 |     40,168 |          0 |        672 |     40,840 |
+| JSON         |         10 |     18,451 |          0 |          2 |     18,453 |
+| XML          |         26 |      5,490 |          0 |          0 |      5,490 |
+| C#           |         12 |        727 |         12 |         60 |        799 |
+| CSS          |          1 |        700 |          0 |         85 |        785 |
+| JavaScript   |          2 |        440 |         28 |         81 |        549 |
+| MSBuild      |          3 |         80 |          0 |          5 |         85 |
+| EditorConfig |          1 |         13 |          0 |          1 |         14 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                                | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                   |        139 |     66,069 |         40 |        906 |     67,015 |
+| . (Files)                                                                                                                                           |        123 |     47,537 |         28 |        896 |     48,461 |
+| bin                                                                                                                                                 |          7 |      9,610 |          0 |          2 |      9,612 |
+| bin\Debug                                                                                                                                           |          7 |      9,610 |          0 |          2 |      9,612 |
+| bin\Debug\net8.0                                                                                                                                    |          7 |      9,610 |          0 |          2 |      9,612 |
+| obj                                                                                                                                                 |          9 |      8,922 |         12 |          8 |      8,942 |
+| obj (Files)                                                                                                                                         |          4 |      8,887 |          0 |          0 |      8,887 |
+| obj\Debug                                                                                                                                           |          5 |         35 |         12 |          8 |         55 |
+| obj\Debug\net8.0                                                                                                                                    |          5 |         35 |         12 |          8 |         55 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                                                            | language     | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\AuctionStatusServiceTests.cs                                          | C#           |         27 |          0 |          3 |         30 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AdminController.html                                        | HTML         |        316 |          0 |          8 |        324 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModel.html                                                | HTML         |        804 |          0 |          8 |        812 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv2.html                                              | HTML         |        840 |          0 |          8 |        848 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv3.html                                              | HTML         |        839 |          0 |          8 |        847 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv4.html                                              | HTML         |        838 |          0 |          8 |        846 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv5.html                                              | HTML         |        830 |          0 |          8 |        838 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv6.html                                              | HTML         |        903 |          0 |          8 |        911 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv7.html                                              | HTML         |        851 |          0 |          8 |        859 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AiModelv8.html                                              | HTML         |        862 |          0 |          8 |        870 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Auction.html                                                | HTML         |        302 |          0 |          8 |        310 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionController.html                                      | HTML         |        725 |          0 |          8 |        733 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionForPrediction.html                                   | HTML         |        315 |          0 |          8 |        323 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionRatingPrediction.html                                | HTML         |        313 |          0 |          8 |        321 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionRecommender.html                                     | HTML         |        337 |          0 |          8 |        345 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionStatusChecker.html                                   | HTML         |        205 |          0 |          8 |        213 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuctionStatusService.html                                   | HTML         |        264 |          0 |          8 |        272 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuthController.html                                         | HTML         |        550 |          0 |          8 |        558 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_AuthDbSeeder.html                                           | HTML         |        224 |          0 |          8 |        232 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_BiddingHub.html                                             | HTML         |        281 |          0 |          8 |        289 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Chat.html                                                   | HTML         |        167 |          0 |          8 |        175 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ChatController.html                                         | HTML         |        369 |          0 |          8 |        377 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ChatFunction.html                                           | HTML         |        858 |          0 |          8 |        866 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ChatFunctionv2.html                                         | HTML         |      1,050 |          0 |          8 |      1,058 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ChatFunctionv3.html                                         | HTML         |        990 |          0 |          8 |        998 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ChatFunctionv4.html                                         | HTML         |      1,055 |          0 |          8 |      1,063 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Chatfunctionv5.html                                         | HTML         |        963 |          0 |          8 |        971 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_CloudStorageService.html                                    | HTML         |        272 |          0 |          8 |        280 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_CollectData.html                                            | HTML         |        864 |          0 |          8 |        872 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Comment.html                                                | HTML         |        258 |          0 |          8 |        266 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_DailycoService.html                                         | HTML         |        277 |          0 |          8 |        285 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_DataContext.html                                            | HTML         |        196 |          0 |          8 |        204 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_DataContextModelSnapshot.html                               | HTML         |        887 |          0 |          8 |        895 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_DecodedPaymentToken.html                                    | HTML         |        159 |          0 |          8 |        167 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailBody.html                                              | HTML         |        335 |          0 |          8 |        343 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailConfirm.html                                           | HTML         |        643 |          0 |          8 |        651 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailConfirmfix.html                                        | HTML         |        640 |          0 |          8 |        648 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailConfirmfixv2.html                                      | HTML         |        638 |          0 |          8 |        646 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailModel.html                                             | HTML         |        187 |          0 |          8 |        195 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_EmailService.html                                           | HTML         |        215 |          0 |          8 |        223 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Extensions.html                                             | HTML         |        186 |          0 |          8 |        194 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_FixPRoblem.html                                             | HTML         |        709 |          0 |          8 |        717 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ForumRestUser.html                                          | HTML         |        209 |          0 |          8 |        217 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ForumRoles.html                                             | HTML         |        176 |          0 |          8 |        184 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_GCSConfigOptions.html                                       | HTML         |        162 |          0 |          8 |        170 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_GetAucReq.html                                              | HTML         |        194 |          0 |          8 |        202 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Init.html                                                   | HTML         |        612 |          0 |          8 |        620 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_JwtTokenService.html                                        | HTML         |        214 |          0 |          8 |        222 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_LivestreamController.html                                   | HTML         |        255 |          0 |          8 |        263 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_LoginDto.html                                               | HTML         |        162 |          0 |          8 |        170 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Message.html                                                | HTML         |        169 |          0 |          8 |        177 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PasswordReset.html                                          | HTML         |        636 |          0 |          8 |        644 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PayPalAccessToken.html                                      | HTML         |        165 |          0 |          8 |        173 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Payment.2.html                                              | HTML         |        193 |          0 |          8 |        201 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Payment.html                                                | HTML         |        193 |          0 |          8 |        201 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PaymentController.html                                      | HTML         |        477 |          0 |          8 |        485 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PaymentUtils.html                                           | HTML         |        236 |          0 |          8 |        244 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PaymentV3.html                                              | HTML         |        777 |          0 |          8 |        785 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PaymentV4.html                                              | HTML         |        770 |          0 |          8 |        778 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_PaypalConfirmation.html                                     | HTML         |        711 |          0 |          8 |        719 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Photos.html                                                 | HTML         |        811 |          0 |          8 |        819 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_RecommendationService.html                                  | HTML         |        199 |          0 |          8 |        207 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Recommendations.html                                        | HTML         |        176 |          0 |          8 |        184 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_RegisterUserDto.html                                        | HTML         |        162 |          0 |          8 |        170 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Report.2.html                                               | HTML         |        169 |          0 |          8 |        177 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_Report.html                                                 | HTML         |        169 |          0 |          8 |        177 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ReportController.html                                       | HTML         |        347 |          0 |          8 |        355 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ResetPasswordDto.html                                       | HTML         |        163 |          0 |          8 |        171 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_ResourceOwnerAuthorizationHandler.html                      | HTML         |        186 |          0 |          8 |        194 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_RomovedPaypalEmail.html                                     | HTML         |        708 |          0 |          8 |        716 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_SuccessfulLoginDto.html                                     | HTML         |        162 |          0 |          8 |        170 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_UpdatePayment.html                                          | HTML         |        758 |          0 |          8 |        766 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_UserDto.html                                                | HTML         |        162 |          0 |          8 |        170 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_UserInfo.html                                               | HTML         |        862 |          0 |          8 |        870 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_UserRecommendations.html                                    | HTML         |        161 |          0 |          8 |        169 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionComments.html                                        | HTML         |        702 |          0 |          8 |        710 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionCommentsv2.html                                      | HTML         |        731 |          0 |          8 |        739 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionCommentsv3.html                                      | HTML         |        675 |          0 |          8 |        683 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionCommentsv4.html                                      | HTML         |        675 |          0 |          8 |        683 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionCommentsv5.html                                      | HTML         |        675 |          0 |          8 |        683 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionLikes.html                                           | HTML         |        634 |          0 |          8 |        642 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_auctionPictures.html                                        | HTML         |        713 |          0 |          8 |        721 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\Aukcionas_user_payment_info.html                                      | HTML         |        918 |          0 |          8 |        926 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\BiddingHubTests.cs                                                    | C#           |        190 |          0 |          9 |        199 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\DailycoServiceTests.cs                                                | C#           |         18 |          0 |          3 |         21 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\EmailBodyTests.cs                                                     | C#           |        215 |          0 |         13 |        228 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\ExtensionsTests.cs                                                    | C#           |         80 |          0 |          7 |         87 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\GetAuqReqTests.cs                                                     | C#           |         73 |          0 |          7 |         80 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\GlobalUsings.cs                                                       | C#           |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\PaymentTests.cs                                                       | C#           |         11 |          0 |          2 |         13 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\PaymentUtilsTest.cs                                                   | C#           |         93 |          0 |          9 |        102 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\XUnitTests.csproj                                                     | MSBuild      |         31 |          0 |          5 |         36 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\Aukcionas.deps.json                                  | JSON         |      2,677 |          0 |          0 |      2,677 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\Aukcionas.runtimeconfig.json                         | JSON         |         21 |          0 |          0 |         21 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\MvcTestingAppManifest.json                           | JSON         |          3 |          0 |          0 |          3 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\XUnitTests.deps.json                                 | JSON         |      6,840 |          0 |          0 |      6,840 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\XUnitTests.runtimeconfig.json                        | JSON         |         19 |          0 |          0 |         19 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\appsettings.Development.json                         | JSON         |         14 |          0 |          1 |         15 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\bin\Debug\net8.0\appsettings.json                                     | JSON         |         36 |          0 |          1 |         37 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\class.js                                                              | JavaScript   |        169 |         14 |         35 |        218 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\coverage.opencover.xml                                                | XML          |      5,450 |          0 |          0 |      5,450 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_cog.svg                                                          | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_cog_dark.svg                                                     | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_cube.svg                                                         | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_cube_dark.svg                                                    | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_down-dir_active.svg                                              | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_down-dir_active_dark.svg                                         | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_fork.svg                                                         | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_fork_dark.svg                                                    | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_info-circled.svg                                                 | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_info-circled_dark.svg                                            | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_minus.svg                                                        | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_minus_dark.svg                                                   | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_plus.svg                                                         | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_plus_dark.svg                                                    | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_search-minus.svg                                                 | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_search-minus_dark.svg                                            | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_search-plus.svg                                                  | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_search-plus_dark.svg                                             | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_sponsor.svg                                                      | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_star.svg                                                         | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_star_dark.svg                                                    | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_up-dir.svg                                                       | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_up-dir_active.svg                                                | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_wrench.svg                                                       | XML          |          2 |          0 |          0 |          2 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\icon_wrench_dark.svg                                                  | XML          |          1 |          0 |          0 |          1 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\index.htm                                                             | HTML         |        211 |          0 |          8 |        219 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\index.html                                                            | HTML         |        211 |          0 |          8 |        219 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\main.js                                                               | JavaScript   |        271 |         14 |         46 |        331 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs       | C#           |          3 |          1 |          1 |          5 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\Debug\net8.0\MvcTestingAppManifest.json                           | JSON         |          3 |          0 |          0 |          3 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\Debug\net8.0\XUnitTests.AssemblyInfo.cs                           | C#           |          9 |         10 |          5 |         24 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\Debug\net8.0\XUnitTests.GeneratedMSBuildEditorConfig.editorconfig | EditorConfig |         13 |          0 |          1 |         14 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\Debug\net8.0\XUnitTests.GlobalUsings.g.cs                         | C#           |          7 |          1 |          1 |          9 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\XUnitTests.csproj.nuget.dgspec.json                               | JSON         |        255 |          0 |          0 |        255 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\XUnitTests.csproj.nuget.g.props                                   | MSBuild      |         33 |          0 |          0 |         33 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\XUnitTests.csproj.nuget.g.targets                                 | MSBuild      |         16 |          0 |          0 |         16 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\obj\project.assets.json                                               | JSON         |      8,583 |          0 |          0 |      8,583 |
+| c:\Users\Tautvydas\Desktop\Auction-master\Auction-master\Aukcionas\XUnitTests\report.css                                                            | CSS          |        700 |          0 |         85 |        785 |
+| Total                                                                                                                                               |              |     66,069 |         40 |        906 |     67,015 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+

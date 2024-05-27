@@ -1,0 +1,54 @@
+<header>
+  <h2>Information Page</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li (click)="toggleSection('Info')">Information</li>
+      <li (click)="toggleSection('Selling')">Selling item</li>
+      <li (click)="toggleSection('Payment')">Payment</li>
+    </ul>
+  </nav>
+
+  <article *ngIf="selectedSection === 'Info'">
+    <h1>Online auction information</h1>
+    <p>This is online auction page. You can sell and buy items.</p>
+    <p>
+      Incorrect auction will be deleted. Users with inappropriate actions will
+      be banned.
+    </p>
+    <p>
+      For more information, please contact us via email:
+      <a href="mailto:auckionaiinfo&#64;gmail.com"
+        >auckionaiinfo&#64;gmail.com</a
+      >
+    </p>
+  </article>
+
+  <article *ngIf="selectedSection === 'Selling'">
+    <h1>Selling item</h1>
+    <p>
+      To sell item you must create an auction. There is some restrictions in
+      auction create procedure.
+    </p>
+    <p>- Auction leanght cannot exceed 30 days.</p>
+    <p>- Creating auction must include at least one photo of item.</p>
+    <p>- All information must be filled in creation form.</p>
+  </article>
+
+  <article *ngIf="selectedSection === 'Payment'">
+    <h1>Payment information</h1>
+    <p>User can buy pay for auction with Paypal account or Credit Card.</p>
+    <p>
+      For auction creator funds will be transfered to his selected payout form
+      (Paypal account or Bank account)
+    </p>
+    <p>
+      Funds for auction will be transfered to auction owner on seccessful
+      payment from auction winner.
+    </p>
+    <p>
+      Auctino winner has 7 days to pay. After that payment will not be eligible.
+    </p>
+  </article>
+</section>

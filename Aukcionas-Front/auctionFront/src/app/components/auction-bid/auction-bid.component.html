@@ -1,0 +1,295 @@
+<div *ngIf="auction">
+  <div
+    class="row"
+    style="
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-right: 20px;
+      width: 100%;
+    "
+  >
+    <div class="col-md-6">
+      <h2 class="text-center">{{ auction!.name }}</h2>
+      <app-live-stream></app-live-stream>
+      <div class="slideshow-container">
+        <div
+          *ngFor="let photoPath of auction.photoPaths; let i = index"
+          class="mySlides"
+          [style.display]="i === slideIndex ? 'block' : 'none'"
+        >
+          <img
+            [src]="photoPath"
+            alt="Slide {{ i + 1 }}"
+            style="width: 100%; height: 100%; object-fit: contain"
+          />
+        </div>
+        <a class="prev" (click)="prevSlide()">&#10094;</a>
+        <a class="next" (click)="nextSlide()">&#10095;</a>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span
+          class="dot"
+          *ngFor="let _ of auction.photoPaths; let i = index"
+          [class.active]="i === slideIndex"
+          (click)="slideIndex = i"
+        ></span>
+      </div>
+
+      <div *ngIf="isAuthenticated">
+        <h5>
+          Like this auction!
+          <button
+            class="btn"
+            [class.btn-success]="isAuctionLiked"
+            [class.btn-secondary]="!isAuctionLiked"
+            (click)="likeOrUnlikeAuction()"
+            [disabled]="likeButtonDisabled"
+          >
+            {{ isAuctionLiked ? "Liked" : "Like" }}
+          </button>
+        </h5>
+        <h5>
+          Report this auction
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="openReportModal(auction!.id!)"
+          >
+            Report
+          </button>
+        </h5>
+        <button
+        *ngIf="isAdmin && auction.auction_ended!=true"
+            mat-raised-button
+            color="warn"
+            (click)="endauction()"
+          >
+            End auction now
+          </button>
+      </div>
+      <p style="font-size: 18px; font-weight: bold">
+        Time left:
+        <span class="span1" style="color: red; font-size: 20px">{{
+          timeDiff
+        }}</span>
+      </p>
+      <div class="auction-card-item">
+        <span class="auction-label">Auction likes:</span>
+        <span class="auction-value">{{ auction!.auction_likes ?? "0" }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Auction Start Time:</span>
+        <span class="auction-value">{{
+          auction!.auction_start_time | date : "yyyy-MM-dd HH:mm:ss"
+        }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Auction End Time:</span>
+        <span class="auction-value">{{
+          auction!.auction_end_time | date : "yyyy-MM-dd HH:mm:ss"
+        }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Country:</span>
+        <span class="auction-value">{{ auction!.country }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">City:</span>
+        <span class="auction-value">{{ auction!.city }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Category:</span>
+        <span class="auction-value">{{ auction!.category }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Description:</span>
+        <span class="auction-value">{{ auction!.description }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Item build year:</span>
+        <span class="auction-value">{{ auction!.item_build_year }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Item mass(aprox):</span>
+        <span class="auction-value">{{ auction!.item_mass }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Condition:</span>
+        <span class="auction-value">{{ auction!.condition }}</span>
+      </div>
+      <div class="auction-card-item">
+        <span class="auction-label">Material:</span>
+        <span class="auction-value">{{ auction!.material }}</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <h3>Bidding Section</h3>
+        <div class="auction-card-item">
+          <span class="auction-label">Starting price:</span>
+          <span class="auction-value">{{ auction!.starting_price }} €</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Bid amount:</span>
+          <span class="auction-value">{{ auction!.bid_ammount }} €</span>
+        </div>
+        <div *ngif="canBuyNow" class="auction-card-item">
+          <span class="auction-label">Buy now price:</span>
+          <span class="auction-value">{{ auction!.buy_now_price }} €</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Next Bid:</span>
+          <span class="auction-value">{{ calculateNextBid() }} €</span>
+        </div>
+        <div class="auction-card-item">
+          <span class="auction-label">Buy now price:</span>
+          <span class="auction-value">{{ auction!.buy_now_price }} €</span>
+        </div>
+        <button
+          class="btn btn-primary"
+          style="margin: 10px"
+          (click)="PlaceBid(auction!.id!, calculateNextBid())"
+          [ngClass]="{ unclickable: bidButtonDisabled }"
+          *ngIf="canBidNow"
+        >
+          Place Bid
+        </button>
+        <button
+          class="btn btn-primary"
+          style="margin: 10px"
+          (click)="BuyNow(auction!.id!)"
+          *ngIf="canBuyNow"
+        >
+          Buy Now
+        </button>
+        <div
+          *ngIf="
+            auction.bidding_amount_history &&
+            auction.bidding_amount_history.length > 0
+          "
+          class="notification"
+        >
+          Last Bid:
+          {{
+            auction!.bidding_amount_history![
+              auction!.bidding_amount_history!.length - 1
+            ]
+          }}
+          €
+        </div>
+        <div
+          *ngIf="auction.bidding_amount_history === null"
+          class="notification no-bids"
+        >
+          No bids
+        </div>
+      </div>
+      <div class="mt-4">
+        <h4>Bidding History</h4>
+        <div class="bidding-history-table">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Bid Amount</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="auction">
+                <ng-container
+                  *ngFor="
+                    let index of reverseIndexArray(
+                      auction.bidding_amount_history!
+                    )
+                  "
+                >
+                  <tr>
+                    <td>{{ auction.auction_biders_list![index] }}</td>
+                    <td>{{ auction.bidding_amount_history![index] }} €</td>
+                    <td>
+                      {{
+                        auction.bidding_times_history![index] | date : "short"
+                      }}
+                    </td>
+                  </tr>
+                </ng-container>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center mt-4" style="width: 50%">
+    <div class="row" style="width: 100%">
+      <div class="col-md-12">
+        <h3 class="mb-4" style="font-weight: bold">Auction comments</h3>
+        <ul class="list-unstyled comments-list">
+          <li *ngFor="let comment of comments; let i = index" class="comment">
+            <div class="comment-header">
+              <strong (click)="openProfileModal(comment.username)">{{
+                comment.username
+              }}</strong>
+              -
+              <span class="comment-date">{{
+                comment.date | date : "short"
+              }}</span>
+              <button
+                *ngIf="comment.username === this.username"
+                class="btn btn-danger btn-sm"
+                (click)="deleteComment(comment.id)"
+                style="margin-right: 10px"
+              >
+                Delete comment
+              </button>
+            </div>
+            <hr class="comment-divider" />
+            <p class="comment-text">{{ comment.text }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="isAuthenticated" class="mt-4" style="width: 100%">
+      <form
+        [formGroup]="commentForm"
+        (ngSubmit)="addComment()"
+        class="comment-form"
+      >
+        <div class="form-group">
+          <label
+            for="text"
+            class="add-comment-label"
+            style="margin-bottom: 10px"
+            >Add Comment:</label
+          >
+          <textarea
+            formControlName="text"
+            class="form-control comment-textarea"
+            rows="4"
+          ></textarea>
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              commentForm.get('text')!.invalid &&
+              (commentForm.get('text')!.dirty ||
+                commentForm.get('text')!.touched)
+            "
+          >
+            <div *ngIf="commentForm.get('text')!.hasError('required')">
+              Comment is required.
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin: 10px">
+          Submit Comment
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
