@@ -71,10 +71,10 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
     this.userService.isAuthenticated$.subscribe((isAuthenticated) => {
       this.isAuthenticated = isAuthenticated;
     });
-    this.userService.isAdmin$.subscribe((isAdmin) =>{
+    this.userService.isAdmin$.subscribe((isAdmin) => {
       this.isAdmin = isAdmin;
-      console.log("is user admin " , this.isAdmin)
-    })
+      console.log('is user admin ', this.isAdmin);
+    });
   }
 
   paidFor = false;
@@ -119,11 +119,15 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
       }, 100);
     }
   }
-  
 
   calculateTimeDifference(): string {
-    if (this.auction && this.auction.auction_end_time) {
+    if (
+      this.auction &&
+      this.auction.auction_end_time &&
+      this.auction.auction_start_time
+    ) {
       let auctionEndTime: Date;
+      let auctionStartTime: Date;
       if (typeof this.auction.auction_end_time === 'string') {
         auctionEndTime = new Date(this.auction.auction_end_time);
       } else if (this.auction.auction_end_time instanceof Date) {
@@ -131,8 +135,18 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
       } else {
         return 'Invalid date';
       }
+      if (typeof this.auction.auction_start_time === 'string') {
+        auctionStartTime = new Date(this.auction.auction_start_time);
+      } else if (this.auction.auction_start_time instanceof Date) {
+        auctionStartTime = this.auction.auction_start_time;
+      } else {
+        return 'Invalid date';
+      }
 
-      return calculateTimeDifference(auctionEndTime.toString());
+      return calculateTimeDifference(
+        auctionStartTime.toString(),
+        auctionEndTime.toString()
+      );
     }
 
     return '';
@@ -465,7 +479,7 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
       this.canBuyNow = false;
       console.log('BuyNow -4');
     }
-    if(!this.isAuthenticated){
+    if (!this.isAuthenticated) {
       this.canBuyNow = false;
       console.log('BuyNow -5');
     }
@@ -480,7 +494,7 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
   }
   shouldDisplayBidNowButton(): boolean {
     console.log('Entering shouldDisplayBidNowButton');
-  
+
     if (
       !this.auction ||
       this.auction.auction_ended ||
@@ -491,41 +505,47 @@ export class AuctionBidComponent implements OnInit, AfterViewInit {
       this.canBidNow = false;
       return false;
     }
-  
+    if (
+      !this.datesCheck(
+        this.auction.auction_start_time,
+        this.auction.auction_end_time
+      )
+    ) {
+      this.canBidNow = false;
+      return false;
+    }
     if (
       this.auction.auction_biders_list &&
       this.auction.auction_biders_list.length > 0
     ) {
-      const lastBidder = this.auction.auction_biders_list[
-        this.auction.auction_biders_list.length - 1
-      ];
-  
+      const lastBidder =
+        this.auction.auction_biders_list[
+          this.auction.auction_biders_list.length - 1
+        ];
+
       console.log('Last Bidder:', lastBidder);
       console.log('Current User:', this.username);
-  
-      // Check if the last bidder is the current user
       if (lastBidder === this.username) {
         console.log('Condition 2');
         this.canBidNow = false;
         return false;
       }
     }
-  
+
     console.log('Setting canBidNow to true');
     this.canBidNow = true;
     return true;
   }
-  
+
   public endauction() {
     if (window.confirm('Are you sure you want to end this auction?')) {
       this.adminService.endauction(this.auctionId!).subscribe(() => {
         console.log('Auction ended successfully');
         this.auction!.auction_end_time = new Date();
-        this.router.navigate(['/auction-bid',this.auctionId]);
+        this.router.navigate(['/auction-bid', this.auctionId]);
       });
     } else {
       console.log('Auction end action cancelled');
     }
   }
-  
 }

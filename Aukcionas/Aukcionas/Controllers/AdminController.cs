@@ -128,15 +128,20 @@ namespace Aukcionas.Controllers
                 {
                     return NotFound();
                 }
-                if(auction.auction_won== true && auction.is_Paid == true)
+                if (auction.auction_won==true && auction.is_Paid==true)
                 {
                     return BadRequest("Cannot delete this auction, because it was won and paid for.");
                 }
 
-                _dataContext.Auctions.Remove(auction);
-                await _dataContext.SaveChangesAsync();
 
-                return NoContent();
+                if (auction.auction_end_time.AddDays(7) < DateTime.Now)
+                {
+                    _dataContext.Auctions.Remove(auction);
+                    await _dataContext.SaveChangesAsync();
+                    return NoContent();
+                }
+
+                return BadRequest("Cannot delete this auction, it has not yet been a week since the auction end date.");
             }
             catch (Exception ex)
             {
@@ -144,6 +149,7 @@ namespace Aukcionas.Controllers
                 return StatusCode(500, "An error occurred while deleting the auction.");
             }
         }
+
         [HttpPost("endauction/{id}")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]

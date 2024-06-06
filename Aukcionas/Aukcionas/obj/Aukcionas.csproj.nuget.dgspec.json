@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Aukcionas.csproj": {}
+    "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Aukcionas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Aukcionas.csproj": {
+    "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Aukcionas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
+        "projectUniqueName": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
         "projectName": "Aukcionas",
-        "projectPath": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
+        "projectPath": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
         "packagesPath": "C:\\Users\\Tautvydas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\obj\\",
+        "outputPath": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

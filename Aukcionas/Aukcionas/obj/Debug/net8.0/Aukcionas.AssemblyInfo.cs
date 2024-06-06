@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aukcionas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c5e8ecb645993e243662818332153e5c3294e77")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aukcionas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aukcionas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

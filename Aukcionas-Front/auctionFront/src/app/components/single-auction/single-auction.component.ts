@@ -22,7 +22,10 @@ export class SingleAuctionComponent implements OnInit {
   }
 
   calculateTimeDifference(): string {
-    return calculateTimeDifference(this.data.product.auction_end_time);
+    return calculateTimeDifference(
+      this.data.product.auction_start_time,
+      this.data.product.auction_end_time
+    );
   }
   bidNow(): void {
     this.dialogRef.close();

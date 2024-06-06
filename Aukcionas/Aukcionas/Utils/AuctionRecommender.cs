@@ -81,6 +81,18 @@ namespace Aukcionas.Utils
 
         private IEnumerable<(int, float)> SuggestAuctionsForUser(ITransformer model, string userId, DataContext dbContext)
         {
+            Func<string, IEnumerable<string>> getSimilarCategories = category =>
+            {
+                return new List<string> { category };
+            };
+            var userInteractedCategories = dbContext.Recommendations
+                .Where(r => r.UserId == userId)
+                .Join(dbContext.Auctions, r => r.AuctionId, a => a.id, (r, a) => a.category)
+                .GroupBy(category => category)
+                .Select(g => new { Category = g.Key, Count = g.Count() })
+                .OrderByDescending(g => g.Count)
+                .Select(g => g.Category)
+                .ToList();
             var currentAuctions = dbContext.Auctions
                 .Where(a => a.auction_end_time > DateTime.Now)
                 .ToList();
@@ -89,41 +101,56 @@ namespace Aukcionas.Utils
 
             var predictionEngine = _mlContext.Model.CreatePredictionEngine<AuctionForPrediction, AuctionRatingPrediction>(model);
 
-            var userInteractions = dbContext.Recommendations
-                .Where(r => r.UserId == userId)
-                .ToList();
-
-            var averageInteraction = userInteractions.Average(r => (float)r.InteractionType);
-
-            foreach (var auction in currentAuctions)
+            foreach (var category in userInteractedCategories)
             {
-                var userInteractedCategory = userInteractions.Any(r => r.AuctionId == auction.id && (float)r.InteractionType > averageInteraction);
-
-                var auctionForPrediction = new AuctionForPrediction
+                var auctionsInCategory = currentAuctions
+                    .Where(a => a.category == category)
+                    .ToList();
+                if (auctionsInCategory.Count < 5)
                 {
-                    AuctionId = auction.id,
-                    Category = auction.category,
-                    UserId = userId
-                };
-
-                try
-                {
-                    var rating = predictionEngine.Predict(auctionForPrediction).Score;
-                    float fallbackRating = 0.5f; 
-                    predictions.Add((auction.id, float.IsNaN(rating) ? fallbackRating : rating));
+                    var similarCategories = getSimilarCategories(category);
+                    auctionsInCategory.AddRange(currentAuctions.Where(a => similarCategories.Contains(a.category) && a.category != category));
                 }
-                catch (Exception ex)
+
+                foreach (var auction in auctionsInCategory)
                 {
-                    Console.WriteLine($"Error predicting rating for auction {auction.id}: {ex.Message}");
-                    float fallbackRating = 0.5f;
-                    predictions.Add((auction.id, fallbackRating));
+                    var auctionForPrediction = new AuctionForPrediction
+                    {
+                        AuctionId = auction.id,
+                        Category = auction.category,
+                        UserId = userId
+                    };
+
+                    try
+                    {
+                        var rating = predictionEngine.Predict(auctionForPrediction).Score;
+                        float fallbackRating = 0.5f;
+                        predictions.Add((auction.id, float.IsNaN(rating) ? fallbackRating : rating));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error predicting rating for auction {auction.id}: {ex.Message}");
+                        float fallbackRating = 0.5f;
+                        predictions.Add((auction.id, fallbackRating));
+                    }
                 }
             }
+            var topAuctions = predictions.OrderByDescending(x => x.Item2).Take(5).ToList();
+            if (!topAuctions.Any())
+            {
+                var visitedAuctions = dbContext.Recommendations
+                    .Where(r => r.UserId == userId)
+                    .OrderByDescending(r => r.InteractionType)
+                    .Take(5)
+                    .Select(r => new Tuple<int, float>(r.AuctionId, (float)r.InteractionType))
+                    .ToList();
 
-            var topAuctions = predictions.OrderByDescending(x => x.Item2).Take(5);
+                return visitedAuctions.Select(t => (t.Item1, t.Item2));
+            }
 
             return topAuctions;
         }
+
 
         private void UpdateUserRecommendations(string userId, IEnumerable<(int, float)> topAuctions, DataContext dbContext)
         {

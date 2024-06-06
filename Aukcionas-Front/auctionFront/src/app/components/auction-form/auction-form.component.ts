@@ -23,6 +23,8 @@ export class AuctionFormComponent implements OnInit {
   public auctionForm!: FormGroup;
   public submitButton!: string;
   public auctions!: Auction;
+  photoError = false;
+  photoErrorMessage = '';
   photoSelected: boolean = false;
   constructor(
     private fb: FormBuilder,
@@ -139,7 +141,7 @@ export class AuctionFormComponent implements OnInit {
         material: ['', Validators.required],
       },
       {
-        validators: [this.buyNowValidator, this.minBuyPriceValidator],
+        //validators: [this.buyNowValidator, this.minBuyPriceValidator],
       }
     );
   }
@@ -168,38 +170,38 @@ export class AuctionFormComponent implements OnInit {
       });
     });
   }
-  buyNowValidator(formGroup: FormGroup) {
-    const startingPrice = formGroup.get('starting_price');
-    const buyNowPrice = formGroup.get('buy_now_price');
+  // buyNowValidator(formGroup: FormGroup) {
+  //   const startingPrice = formGroup.get('starting_price');
+  //   const buyNowPrice = formGroup.get('buy_now_price');
 
-    if (
-      startingPrice!.value &&
-      buyNowPrice!.value &&
-      parseFloat(startingPrice!.value) > parseFloat(buyNowPrice!.value)
-    ) {
-      buyNowPrice!.setErrors({ invalidPrice: true });
-      return { invalidPrice: true };
-    } else {
-      buyNowPrice!.setErrors(null);
-      return null;
-    }
-  }
-  minBuyPriceValidator(formGroup: FormGroup) {
-    const startingPrice = formGroup.get('starting_price');
-    const minBuyPrice = formGroup.get('min_buy_price');
+  //   if (
+  //     startingPrice!.value &&
+  //     buyNowPrice!.value &&
+  //     parseFloat(startingPrice!.value) > parseFloat(buyNowPrice!.value)
+  //   ) {
+  //     buyNowPrice!.setErrors({ invalidPrice: true });
+  //     return { invalidPrice: true };
+  //   } else {
+  //     buyNowPrice!.setErrors(null);
+  //     return null;
+  //   }
+  // }
+  // minBuyPriceValidator(formGroup: FormGroup) {
+  //   const startingPrice = formGroup.get('starting_price');
+  //   const minBuyPrice = formGroup.get('min_buy_price');
 
-    if (
-      startingPrice!.value &&
-      minBuyPrice!.value &&
-      parseFloat(startingPrice!.value) > parseFloat(minBuyPrice!.value)
-    ) {
-      minBuyPrice!.setErrors({ invalidPrice: true });
-      return { invalidPrice: true };
-    } else {
-      minBuyPrice!.setErrors(null);
-      return null;
-    }
-  }
+  //   if (
+  //     startingPrice!.value &&
+  //     minBuyPrice!.value &&
+  //     parseFloat(startingPrice!.value) > parseFloat(minBuyPrice!.value)
+  //   ) {
+  //     minBuyPrice!.setErrors({ invalidPrice: true });
+  //     return { invalidPrice: true };
+  //   } else {
+  //     minBuyPrice!.setErrors(null);
+  //     return null;
+  //   }
+  // }
   auctionStartTimeValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const auctionStartTime = new Date(control.value);
@@ -239,15 +241,46 @@ export class AuctionFormComponent implements OnInit {
     };
   }
   onFileChange(event: any) {
-    if (event.target.files && event.target.files.length > 0) {
-      this.photoSelected = true;
-      console.log('Photo selected: ' + this.photoSelected);
-      const files = event.target.files;
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i];
+    this.photoError = false;
+    this.photoErrorMessage = '';
+
+    if (event.target.files) {
+      const allowedExtensions = ['jpg', 'jpeg', 'png', 'jfif'];
+      const MAX_FILE_SIZE = 1024 * 1024; // 1 MB in bytes
+
+      const isValid = Array.from(event.target.files).every((file: any) => {
+        const isValidExtension = allowedExtensions.includes(
+          file.name.split('.').pop().toLowerCase()
+        );
+        const isValidSize = file.size <= MAX_FILE_SIZE;
+        if (!isValidExtension || !isValidSize) {
+          this.photoError = true;
+
+          if (!isValidExtension) {
+            this.photoErrorMessage =
+              'Please select only JPG, JPEG, JFIF, or PNG images.';
+          } else if (!isValidSize) {
+            this.photoErrorMessage =
+              'File size exceeds the maximum limit of 1 MB.';
+          }
+
+          return false;
+        }
+
+        return true;
+      });
+
+      if (!isValid) {
+        return;
+      }
+
+      for (let i = 0; i < event.target.files.length; i++) {
+        const file = event.target.files[i];
         console.log('File: ' + file.name);
         this.uploadFile(file);
       }
+      this.photoSelected = true;
+      console.log('Photo(s) selected: ' + this.photoSelected);
     } else {
       this.photoSelected = false;
       console.log('Photo selected: ' + this.photoSelected);

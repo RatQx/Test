@@ -504,29 +504,36 @@ namespace Aukcionas.Controllers
 
                 if (userId != null)
                 {
-                    var userRecommendations = await _dataContext.UserRecommendations
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user != null && user.CollectData == true)
+                    {
+                        var userRecommendations = await _dataContext.UserRecommendations
                         .FirstOrDefaultAsync(r => r.UserId == userId);
 
-                    if (userRecommendations != null && userRecommendations.RecommendedAuctionIds.Count > 0)
-                    {
-                        var recommendedAuctionIds = userRecommendations.RecommendedAuctionIds;
-
-                        var suggestedAuctions = await _dataContext.Auctions
-                            .Where(a => recommendedAuctionIds.Contains(a.id))
-                            .ToListAsync();
-
-                        var indexMap = recommendedAuctionIds.Select((id, index) => new { Id = id, Index = index })
-                                                            .ToDictionary(x => x.Id, x => x.Index);
-                        suggestedAuctions.Sort((a1, a2) =>
+                        if (userRecommendations != null && userRecommendations.RecommendedAuctionIds.Count > 0)
                         {
-                            var index1 = indexMap[a1.id];
-                            var index2 = indexMap[a2.id];
-                            return index1.CompareTo(index2);
-                        });
+                            var recommendedAuctionIds = userRecommendations.RecommendedAuctionIds.Distinct().ToList();
 
-                        return Ok(suggestedAuctions);
+                            var suggestedAuctions = await _dataContext.Auctions
+                                .Where(a => recommendedAuctionIds.Contains(a.id))
+                                .ToListAsync();
+
+                            var indexMap = recommendedAuctionIds
+                                .Select((id, index) => new { Id = id, Index = index })
+                                .ToDictionary(x => x.Id, x => x.Index);
+
+                            suggestedAuctions.Sort((a1, a2) =>
+                            {
+                                var index1 = indexMap[a1.id];
+                                var index2 = indexMap[a2.id];
+                                return index1.CompareTo(index2);
+                            });
+
+                            return Ok(suggestedAuctions);
+                        }
                     }
                 }
+
                 var topAuctions = await notEndedAuctionsQuery
                     .OrderByDescending(a => a.auction_likes_list.Count)
                     .Take(5)
@@ -539,6 +546,8 @@ namespace Aukcionas.Controllers
                 return StatusCode(500, "Internal Server Error: " + ex.Message);
             }
         }
+
+
         [HttpGet("aucccccc")]
         [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Auction))]
         [ProducesResponseType(StatusCodes.Status200OK)]

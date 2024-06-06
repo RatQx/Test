@@ -31,6 +31,7 @@ export class UserProfileComponent implements OnInit {
     bic_Swift_Code: '',
     collectData: false,
   };
+  originalUserInfo: User = { ...this.userInfo }; // New property to store original data
   showEditForm: boolean = false;
   showAuctionsWonTable: boolean = false;
   showLikedAuctionsTable: boolean = false;
@@ -42,6 +43,7 @@ export class UserProfileComponent implements OnInit {
     private userService: UserService,
     private auctionService: AuctionService
   ) {}
+
   ngOnInit(): void {
     this.getUserInfo();
     this.getUserPaymentLinks();
@@ -51,13 +53,20 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserInfo().subscribe(
       (response: any) => {
         this.userInfo = response.userInfo;
+        this.originalUserInfo = { ...this.userInfo }; // Save the original data
       },
       (error: any) => {
         console.error('Error fetching user info:', error);
       }
     );
   }
+
   toggleEditForm(): void {
+    if (!this.showEditForm) {
+      this.originalUserInfo = { ...this.userInfo }; // Save the original data when entering edit mode
+    } else {
+      this.userInfo = { ...this.originalUserInfo }; // Restore the original data when canceling
+    }
     this.showEditForm = !this.showEditForm;
   }
 
@@ -83,6 +92,7 @@ export class UserProfileComponent implements OnInit {
       this.userService.updateUserInfo(this.userInfo).subscribe(
         (response) => {
           if (response.status === 200) {
+            this.originalUserInfo = { ...this.userInfo }; // Update the original data after successful save
           }
         },
         (error) => {
@@ -99,6 +109,7 @@ export class UserProfileComponent implements OnInit {
   toggleLikedAuctionsTable() {
     this.showLikedAuctionsTable = !this.showLikedAuctionsTable;
   }
+
   onPaymentMethodChange(method: string): void {
     if (method === 'paypal') {
       this.userInfo.paypal = true;
@@ -108,6 +119,7 @@ export class UserProfileComponent implements OnInit {
       this.userInfo.paypal = false;
     }
   }
+
   confirmDeleteUser(): void {
     const confirmed = window.confirm(
       'Are you sure you want to delete your account?'
@@ -121,6 +133,7 @@ export class UserProfileComponent implements OnInit {
       );
     }
   }
+
   getUserPaymentLinks(): void {
     this.userService.getUserPaymentLinks().subscribe(
       (paymentLinks: PaymentLink[]) => {
@@ -137,5 +150,10 @@ export class UserProfileComponent implements OnInit {
     if (this.showPaymentLinksTable) {
       this.getUserPaymentLinks();
     }
+  }
+
+  cancelEdit(): void {
+    this.userInfo = { ...this.originalUserInfo }; // Restore the original data
+    this.toggleEditForm();
   }
 }

@@ -4,9 +4,14 @@
     <button class="chat-button" (click)="startConversation()">
       Start Conversation
     </button>
-    <div class="chat-list">
+
+    <div *ngIf="!(chats$ | async) && !messages.length">
+      Loading chats and messages...
+    </div>
+
+    <div *ngIf="chats$ | async as chats" class="chat-list">
       <div
-        *ngFor="let chat of chats$ | async"
+        *ngFor="let chat of chats"
         class="chat-item"
         (click)="openChat(chat.id)"
       >
@@ -55,33 +60,31 @@
       </button>
     </div>
   </div>
+
   <div class="chat-window">
     <div class="messages">
       <div *ngFor="let message of messages" class="message">
-        <div class="message-content">
-          <div
-            *ngIf="message.senderUsername === this.username; else otherUser"
-            class="own-message"
+        <div
+          *ngIf="message.senderUsername === this.username; else otherUser"
+          class="own-message"
+        >
+          <div>{{ message.senderUsername }}</div>
+          <div class="content">{{ message.content }}</div>
+          <div class="sent-at">{{ message.sentAt | date : "shortTime" }}</div>
+          <mat-icon class="delete-icon" (click)="deleteMessage(message.id)"
+            >delete_forever</mat-icon
           >
+        </div>
+        <ng-template #otherUser>
+          <div class="other-message">
             <div>{{ message.senderUsername }}</div>
             <div class="content">{{ message.content }}</div>
             <div class="sent-at">{{ message.sentAt | date : "shortTime" }}</div>
-            <mat-icon class="delete-icon" (click)="deleteMessage(message.id)">
-              delete_forever
-            </mat-icon>
           </div>
-          <ng-template #otherUser>
-            <div class="other-message">
-              <div>{{ message.senderUsername }}</div>
-              <div class="content">{{ message.content }}</div>
-              <div class="sent-at">
-                {{ message.sentAt | date : "shortTime" }}
-              </div>
-            </div>
-          </ng-template>
-        </div>
+        </ng-template>
       </div>
     </div>
+
     <div class="new-message">
       <textarea
         [(ngModel)]="newMessageText"

@@ -399,6 +399,35 @@ namespace Aukcionas.Controllers
 
             return Ok(paymentLinks);
         }
+        [HttpGet]
+        [Route("userauctions")]
+        [Authorize(Roles = "Admin, ForumUser")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<IActionResult> GetUserAuctions()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+            var userAuctions = await _dataContext.Auctions
+                              .Where(a => a.username == user.Id)
+                              .OrderByDescending(a => a.auction_start_time)
+                              .Take(50)
+                              .ToListAsync();
+
+
+            if (userAuctions == null || userAuctions.Count == 0)
+            {
+                return NotFound("No auctions found for the user");
+            }
+
+            return Ok(userAuctions);
+        }
 
     }
 }

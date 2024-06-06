@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G5rxsQtqpMI1SVFaNmDCw3VxMeL63KdDTCAqYQq6IBqoc6kOMkYe6wwOG6z8dz8Pxc0EAycwx7cB46DIr1LhzQ==",
+  "dgSpecHash": "UrQjlSbRCXgTgWt5SM8mrFEQj84aDAkSVD5a8DP8nXLGpDfpGh/35ImMSsjd/YjHaYUsROdfCS38PgFgazFrpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
+  "projectFilePath": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Aukcionas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tautvydas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Tautvydas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

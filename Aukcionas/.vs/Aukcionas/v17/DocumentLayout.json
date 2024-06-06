@@ -1,38 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\",
+  "WorkspaceRootPath": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\models\\getaucreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\models\\getaucreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\utils\\auctionrecommender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\utils\\auctionrecommender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\utils\\auctionstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\utils\\auctionstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\models\\getaucreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\models\\getaucreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\services\\auctionstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\bakis\\auction-master\\aukcionas\\aukcionas\\services\\auctionstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\services\\auctionstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|c:\\users\\tautvydas\\desktop\\aukcionas\\aukcionas\\utils\\auctionstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0064AF61-D419-43E9-8FFE-04CCD726DF7C}|Aukcionas\\Aukcionas.csproj|solutionrelative:aukcionas\\utils\\auctionstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,59 +51,73 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetAucReq.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Models\\GetAucReq.cs",
-              "RelativeDocumentMoniker": "Aukcionas\\Models\\GetAucReq.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Models\\GetAucReq.cs",
-              "RelativeToolTip": "Aukcionas\\Models\\GetAucReq.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Title": "AuctionRecommender.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Utils\\AuctionRecommender.cs",
+              "RelativeDocumentMoniker": "Aukcionas\\Utils\\AuctionRecommender.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Utils\\AuctionRecommender.cs",
+              "RelativeToolTip": "Aukcionas\\Utils\\AuctionRecommender.cs",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAQwLkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T14:03:54.003Z",
+              "WhenOpened": "2024-06-05T15:37:49.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "GetAucReq.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Models\\GetAucReq.cs",
+              "RelativeDocumentMoniker": "Aukcionas\\Models\\GetAucReq.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Models\\GetAucReq.cs",
+              "RelativeToolTip": "Aukcionas\\Models\\GetAucReq.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowAgAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T14:03:54.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Auction.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Models\\Auction.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Models\\Auction.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Models\\Auction.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Models\\Auction.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Models\\Auction.cs",
               "RelativeToolTip": "Aukcionas\\Models\\Auction.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAwwGMAAAAhAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGEAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T17:42:50.372Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Aukcionas\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAA0AAAAXAAAA",
+              "ViewState": "AQIAAJIBAAAAAAAAAAAmwKIBAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T17:09:28.129Z"
+              "WhenOpened": "2024-05-23T17:09:28.129Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Aukcionas\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAUwM0AAAA5AAAA",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAUwIUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:11:44.49Z"
+              "WhenOpened": "2024-05-23T16:11:44.49Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Data\\DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Data\\DataContext.cs",
               "RelativeToolTip": "Aukcionas\\Data\\DataContext.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAA9wBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -107,35 +125,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AuctionController.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AuctionController.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AuctionController.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Controllers\\AuctionController.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Controllers\\AuctionController.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Controllers\\AuctionController.cs",
               "RelativeToolTip": "Aukcionas\\Controllers\\AuctionController.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAqwFIAAAA3AAAA",
+              "ViewState": "AQIAABQCAAAAAAAAAAAUwCYCAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T19:29:59.611Z"
+              "WhenOpened": "2024-05-22T19:29:59.611Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "AuctionStatusChecker.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Utils\\AuctionStatusChecker.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Utils\\AuctionStatusChecker.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Utils\\AuctionStatusChecker.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Utils\\AuctionStatusChecker.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Utils\\AuctionStatusChecker.cs",
               "RelativeToolTip": "Aukcionas\\Utils\\AuctionStatusChecker.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAAwBUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T16:46:55.242Z"
+              "WhenOpened": "2024-05-22T16:46:55.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AuctionStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Services\\AuctionStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Services\\AuctionStatusService.cs",
               "RelativeDocumentMoniker": "Aukcionas\\Services\\AuctionStatusService.cs",
-              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\Aukcionas\\Services\\AuctionStatusService.cs",
+              "ToolTip": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\Aukcionas\\Services\\AuctionStatusService.cs",
               "RelativeToolTip": "Aukcionas\\Services\\AuctionStatusService.cs",
               "ViewState": "AQIAABkAAAAAAAAAAADwvyQAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

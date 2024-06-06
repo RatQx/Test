@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r7eatUANk9ttQF6o10fIBg3zIFn+h6KtvcJ8exqOC1HGV6fG4+ye+LLrJ6pBAFe8YxTDoiXihch7sqLoIfhIfw==",
+  "dgSpecHash": "QKpr+uCclyObjHIqQxLLa0FN0h7MwFr16cGgKkzIT3WQrtYedJ19GZA3jpSp4ajwo9OVp1A19detU1r6NDLTLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tautvydas\\Desktop\\Aukcionas\\XUnitTests\\XUnitTests.csproj",
+  "projectFilePath": "C:\\Users\\Tautvydas\\Desktop\\bakis\\Auction-master\\Aukcionas\\XUnitTests\\XUnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tautvydas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Tautvydas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

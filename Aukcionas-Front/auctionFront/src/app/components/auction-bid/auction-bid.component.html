@@ -61,13 +61,13 @@
           </button>
         </h5>
         <button
-        *ngIf="isAdmin && auction.auction_ended!=true"
-            mat-raised-button
-            color="warn"
-            (click)="endauction()"
-          >
-            End auction now
-          </button>
+          *ngIf="isAdmin && auction.auction_ended != true"
+          mat-raised-button
+          color="warn"
+          (click)="endauction()"
+        >
+          End auction now
+        </button>
       </div>
       <p style="font-size: 18px; font-weight: bold">
         Time left:
@@ -271,6 +271,7 @@
             formControlName="text"
             class="form-control comment-textarea"
             rows="4"
+            pattern="^[\w\s?.\/,:;\|=\+-\!\@\#\$%\^&\*\(\)]+$"
           ></textarea>
           <div
             class="invalid-feedback"
@@ -282,6 +283,9 @@
           >
             <div *ngIf="commentForm.get('text')!.hasError('required')">
               Comment is required.
+            </div>
+            <div *ngIf="commentForm.get('text')!.hasError('pattern')">
+              Only text, numbers and some symbols are allowed
             </div>
           </div>
         </div>

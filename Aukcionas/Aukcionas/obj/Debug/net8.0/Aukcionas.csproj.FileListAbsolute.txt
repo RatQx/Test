@@ -871,3 +871,4 @@ C:\Users\Tautvydas\Desktop\Aukcionas\Aukcionas\obj\Debug\net8.0\refint\Aukcionas
 C:\Users\Tautvydas\Desktop\Aukcionas\Aukcionas\obj\Debug\net8.0\Aukcionas.pdb
 C:\Users\Tautvydas\Desktop\Aukcionas\Aukcionas\obj\Debug\net8.0\Aukcionas.genruntimeconfig.cache
 C:\Users\Tautvydas\Desktop\Aukcionas\Aukcionas\obj\Debug\net8.0\ref\Aukcionas.dll
+C:\Users\Tautvydas\Desktop\bakis\Auction-master\Aukcionas\Aukcionas\obj\Debug\net8.0\Aukcionas.sourcelink.json
